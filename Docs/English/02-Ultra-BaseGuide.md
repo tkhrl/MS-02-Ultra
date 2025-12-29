@@ -33,7 +33,8 @@ Key upgrades include:
 ### Discrete GPU Notes
 
 - Inserting a discrete GPU with display output will, by default, disable the integrated GPU. Use the discrete GPU for display output. You can force integrated graphics to remain enabled under Onboard Devices Setting -> Internal Graphics.
-- Supported low-profile GPUs include the `Gigabyte GeForce RTX™ 5060 OC Low Profile` and `ASUS GeForce RTX™ 5060 LP`.
+- Supported low-profile GPUs include the `Gigabyte GeForce RTX™ 5060 OC Low Profile`, `ASUS GeForce RTX™ 5060 LP`, `ZOTAC GAMING GeForce RTX 5060 Low Profile`.
+- Half-height single-slot discrete GPUs without additional power requirements are supported by default.(Ex. RTX 4000 ADA LP)
 - Each PCIe slot provides the standard 75W PCIe slot power, so GPUs compatible with the MS-01 are supported.
 - The internal PSU is rated at 350W. On 285HX systems the default CPU TDP is PL1/PL2 = 100W/140W; when a discrete GPU is installed the CPU TDP will be reduced automatically (because the GPU and CPU share thermal budget) to 90W/110W.
 - Installing a dual-slot low-profile GPU will block one PCIe x4 slot, making that slot unusable.

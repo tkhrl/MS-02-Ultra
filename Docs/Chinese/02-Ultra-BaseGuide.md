@@ -36,7 +36,8 @@ MS-02 Ultra 是一个从MS-01全面升级的MINI PC
 ### 独立显卡
 
 - 插入带显示功能的独立显卡时，会默认自动关闭集成显卡。请使用独立显卡进行显示输出。但您可以在`Onboard Devices Setting` -> `Internal Graphics` 中强制启用此功能
-- 独立显卡支持 `Gigabyte GeForce RTX™ 5060 OC Low Profile`和 `ASUS GeForce RTX™ 5060 LP`
+- 独立显卡支持 `Gigabyte GeForce RTX™ 5060 OC Low Profile`,`ASUS GeForce RTX™ 5060 LP`,`ZOTAC GAMING GeForce RTX 5060 Low Profile`
+- 无需额外供电的半高单槽显卡默认支持。(如RTX 4000 ADA LP) 
 - 每一个PCIe插槽都支持标准的PCIe 75W供电，所以适配`MS-01`的显卡也是支持的 
 - 显卡内置电源适配器为 `350W`, 285HX默认TDP为`PL1/PL2:100W/140W` 当插入显卡后，因为显卡和CPU会互相烤，所以会自动降低TDP为`90/110W`
 - 插入双槽半高显卡时，会遮挡住一个PCIex4插槽，导致此插槽无法使用

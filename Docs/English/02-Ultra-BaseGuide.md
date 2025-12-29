@@ -60,11 +60,15 @@ This table compares idle power consumption between systems with and without the 
 |-----|-----------|---------------------------|-------------------------|------------------------|----------------------|
 | 285HX | 1.55W | 9.8-12-13W | 22W | 46.8W | 52.2W |
 
+### 25Gbps NIC
+Currently, only the 285HX version (MS-02U-285HX) includes the 25Gbps NIC Card.
+The 25Gbps NIC uses an Intel E810-XXV2 controller connected to the CPU via **PCIe 4.0 x4** bus.
+For the PCIe lane diagram, see: [PCIe Lane Diagram](https://github.com/minisforum-docs/MS-02-Ultra/blob/main/Datasheet/MS-02-Ultra%20block.drawio.png)
 
 ### SSD Count and Speeds
-With MinisForum's dedicated E810 expansion card installed, the system can support up to 4 SSDs: 2 on the motherboard and 2 on the expansion card. Currently the E810 card ships standard only with 285HX SKUs; 275HX and 235HX SKUs only have the 2 onboard SSDs.
+With MinisForum's dedicated E810 expansion card installed, the system can support up to **4 SSDs**: 2 on the motherboard and 2 on the expansion card. Currently the E810 card ships standard only with 285HX SKUs; **275HX and 235HX SKUs only have the 2 onboard SSDs**.
 
-For compatibility, the E810 expansion card's slots are set to PCIe 3.0 x4 by default. You can change them to PCIe 4.0 in BIOS, but after switching it is recommended to run a storage benchmark. If you see anomalies, revert the slot to PCIe 3.0.
+For compatibility, the E810 expansion card's NVME slots are set to PCIe 3.0 x4 by default. You can change them to PCIe 4.0 in BIOS, but after switching it is recommended to run a storage benchmark. If you see anomalies, revert the slot to PCIe 3.0.
 
 Adjust the SSD PCIe speed in BIOS: `Onboard Devices Setting` -> `PCI-E Port` -> `PCIe Speed`.
 

@@ -7,6 +7,7 @@ This document lists all known issues for released MS-02 Ultra models and their c
 
 - [PCIe SMBus Causing Boot Failure](#pcie-smbus-causing-boot-failure)
 - [RTL8127 Driver Leaves Device Unbootable After Shutdown](#rtl8127-driver-leaves-device-unbootable-after-shutdown)
+- [PCIe5.0x16 Slot Cannot using PCIe Passthough](#pcie50x16-slot-cannot-using-pcie-passthough)
 
 ## PCIe SMBus Causing Boot Failure
 
@@ -143,3 +144,18 @@ lsmod | grep r8127
 # The following output indicates successful installation; if nothing is displayed, the installation failed
 # r8127  xxxxxxx 0
 ```
+
+## PCIe5.0x16 Slot Cannot using PCIe Passthough
+
+There maybe have some functional conflict in D3 State and forces CLOCK push.   
+For compatibility, this slot disables ASPM by default and forces CLOCK push.  
+If you got error in this below
+```
+vfio-pci 0000:01:00.0: Unable to change power staate from D3cold to DO, device inacces
+```
+It's highly likely that this was encountered.  
+
+In BIOS Setting `Advanced` -> `Onboard Devices Setting` -> `PCI-E Port`  
+`Pcie x16 Slot - Clock assignment` Change to `Platform-POR`  
+`ClkReq for Pcie x16 Slot Clock` Change to `Platform-POR`  
+Will fix this issue.

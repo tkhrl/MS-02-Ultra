@@ -7,6 +7,7 @@
 
 - [PCIe SMBus导致无法开机](#pcie-smbus导致无法开机)
 - [RTL8127 驱动问题关机后导致无法再次开机](#rtl8127-驱动问题关机后导致无法再次开机)
+- [PCIe5.0x16 插槽无法使用PCIe Passthrough](#pcie5.0x16插槽无法使用pcie直通)
 
 ## PCIe SMBus导致无法开机
 
@@ -134,4 +135,41 @@ lsmod | grep r8127
 #显示以下内容安装成功，没有显示任何内容则安装失败
 #r8127  xxxxxxx 0
 ```
+
+## PCIe5.0x16插槽无法使用PCIe直通
+
+### 问题总结
+
+为了兼容性，此插槽默认禁用ASPM并强制推送时钟。
+而显卡的D3省电状态和强制时钟推送之间存在功能冲突。
+如果收到以下错误
+
+```
+vfio-pci 0000:01:00.0: Unable to change power state from D3cold to D0, device inaccessible
+```
+
+很可能遇到了此问题。
+
+### 解决方案
+
+在BIOS设置 `Advanced` -> `Onboard Devices Setting` -> `PCI-E Port`
+将 `Pcie x16 Slot - Clock assignment` 更改为 `Platform-POR`
+将 `ClkReq for Pcie x16 Slot Clock` 更改为 `Platform-POR`
+即可解决此问题。
+
+为了兼容性，此插槽默认禁用ASPM并强制推送时钟。
+而显卡的D3省电状态和强制时钟推送之间存在功能冲突。
+如果收到以下错误
+
+```
+vfio-pci 0000:01:00.0: Unable to change power state from D3cold to D0, device inaccessible
+```
+
+很可能遇到了此问题。
+
+在BIOS设置 `Advanced` -> `Onboard Devices Setting` -> `PCI-E Port`
+将 `Pcie x16 Slot - Clock assignment` 更改为 `Platform-POR`
+将 `ClkReq for Pcie x16 Slot Clock` 更改为 `Platform-POR`
+即可解决此问题。
+
 

@@ -65,6 +65,11 @@ This list shows non-official but tested compatible memory. If two DIMMs work, fo
 | Gloway VGM5SX56C46AG-STACNN | 16 GB | NO | ✅ | 4400 / 4800 MHz |  | 5600 MHz | 1R | |
 | Lenovo Generic N Series | 16 GB | NO | ✅ | 4400 / 4800 MHz | 4400 MHz | 5600 MHz | 1R | |
 
+### Memory Community Test Passlist
+| Memory brand & model | Capacity | ECC | Pass | 2-DIMM freq | 4-DIMM freq | Native freq | Rank | Failure notes |
+|----------------------|---------:|:---:|:----:|------------:|------------:|------------:|:----:|---------------|
+| Crucial CT2K16G56C46S5 | 16 GB | NO | ✅ | 4800 MHz |  |5600Mhz| 1R | |
+
 ## Maximum Memory Frequency / Overclocking
 
 The MS-02 Ultra can reach higher memory frequencies in some cases, but factory defaults are set lower to maximize compatibility. This document summarizes limited test results and does not guarantee every MS-02 Ultra will behave identically.
